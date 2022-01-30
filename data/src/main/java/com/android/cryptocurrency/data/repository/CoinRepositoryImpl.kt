@@ -4,9 +4,8 @@ import com.android.cryptocurrency.data.datasource.CoinRemoteDatasource
 import com.android.cryptocurrency.domain.model.Coin
 import com.android.cryptocurrency.domain.model.CoinDetail
 import com.android.cryptocurrency.domain.repository.CoinRepository
-import javax.inject.Inject
 
-class CoinRepositoryImpl @Inject constructor(
+class CoinRepositoryImpl(
     private val datasource: CoinRemoteDatasource,
 ) : CoinRepository {
     override suspend fun getCoins(): List<Coin> {

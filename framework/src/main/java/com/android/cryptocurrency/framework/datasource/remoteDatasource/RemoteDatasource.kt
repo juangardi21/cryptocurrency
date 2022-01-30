@@ -6,9 +6,8 @@ import com.android.cryptocurrency.domain.model.CoinDetail
 import com.android.cryptocurrency.framework.datasource.CoinPaprikaApi
 import com.android.cryptocurrency.framework.datasource.dto.toCoin
 import com.android.cryptocurrency.framework.datasource.dto.toCoinDetail
-import javax.inject.Inject
 
-class CoinRemoteDatasourceImpl @Inject constructor(
+class CoinRemoteDatasourceImpl(
     private val api: CoinPaprikaApi,
 ): CoinRemoteDatasource {
 
