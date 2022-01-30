@@ -1,5 +1,6 @@
-package com.android.cryptocurrency.framework.datasource.remoteDatasource.dto
+package com.android.cryptocurrency.framework.datasource.dto
 
+import com.android.cryptocurrency.domain.model.CoinDetail
 import com.google.gson.annotations.SerializedName
 
 data class CoinDetailDto(
@@ -39,3 +40,16 @@ data class CoinDetailDto(
     val type: String,
     val whitepaper: Whitepaper
 )
+
+fun CoinDetailDto.toCoinDetail(): CoinDetail {
+    return CoinDetail(
+        coinId = id,
+        name = name,
+        description = description,
+        symbol = symbol,
+        rank = rank,
+        isActive = isActive,
+        tags = tags.map { it.name },
+        team = team.map { it.toTeamMember() }
+    )
+}

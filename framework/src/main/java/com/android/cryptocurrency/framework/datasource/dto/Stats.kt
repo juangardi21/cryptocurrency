@@ -1,4 +1,4 @@
-package com.android.cryptocurrency.framework.datasource.remoteDatasource.dto
+package com.android.cryptocurrency.framework.datasource.dto
 
 data class Stats(
     val contributors: Int,

@@ -1,7 +1,7 @@
-package com.android.cryptocurrency.framework.datasource.remoteDatasource
+package com.android.cryptocurrency.framework.datasource
 
-import com.android.cryptocurrency.framework.datasource.remoteDatasource.dto.CoinDetailDto
-import com.android.cryptocurrency.framework.datasource.remoteDatasource.dto.CoinDto
+import com.android.cryptocurrency.framework.datasource.dto.CoinDetailDto
+import com.android.cryptocurrency.framework.datasource.dto.CoinDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -19,5 +19,4 @@ interface CoinPaprikaApi {
         private const val GET_COINS = BASE_URL + "v1/coins"
         private const val GET_COIN = BASE_URL + "v1/coins/{coinId}"
     }
-
 }

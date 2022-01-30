@@ -1,4 +1,4 @@
-package com.android.cryptocurrency.framework.datasource.remoteDatasource.dto
+package com.android.cryptocurrency.domain.model
 
 data class TeamMember(
     val id: String,

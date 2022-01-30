@@ -1,4 +1,4 @@
-package com.android.cryptocurrency.framework.datasource.remoteDatasource.dto
+package com.android.cryptocurrency.framework.datasource.dto
 
 import com.android.cryptocurrency.domain.model.Coin
 import com.google.gson.annotations.SerializedName
