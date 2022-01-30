@@ -15,8 +15,7 @@ interface CoinPaprikaApi {
 
 
     companion object {
-        private const val BASE_URL = "api.coinpaprika.com/"
-        private const val GET_COINS = BASE_URL + "v1/coins"
-        private const val GET_COIN = BASE_URL + "v1/coins/{coinId}"
+        private const val GET_COINS = "v1/coins"
+        private const val GET_COIN = "v1/coins/{coinId}"
     }
 }
