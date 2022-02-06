@@ -5,6 +5,9 @@ buildscript {
         target_sdk_version = 31
         min_sdk_version = 23
 
+        // Accompanist compose
+        accompanist_flowlayout_version = '0.17.0'
+
         // Espresso
         espresso_version = '3.4.0'
 

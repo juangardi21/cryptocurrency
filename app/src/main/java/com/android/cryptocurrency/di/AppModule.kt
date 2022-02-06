@@ -1,6 +1,6 @@
 package com.android.cryptocurrency.di
 
-import com.android.cryptocurrency.domain.repository.CoinRepository
+import com.android.cryptocurrency.data.repository.CoinRepositoryImpl
 import com.android.cryptocurrency.domain.usecase.coin.getCoin.GetCoinUseCase
 import com.android.cryptocurrency.domain.usecase.coin.getCoins.GetCoinsUseCase
 import dagger.Module
@@ -15,14 +15,14 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGetCoinsUseCase(coinRepository: CoinRepository): GetCoinsUseCase {
-        return GetCoinsUseCase(coinRepository)
+    fun provideGetCoinsUseCase(coinRepositoryImpl: CoinRepositoryImpl): GetCoinsUseCase {
+        return GetCoinsUseCase(coinRepositoryImpl)
     }
 
     @Provides
     @Singleton
-    fun provideGetCoinUseCase(coinRepository: CoinRepository): GetCoinUseCase {
-        return GetCoinUseCase(coinRepository)
+    fun provideGetCoinUseCase(coinRepositoryImpl: CoinRepositoryImpl): GetCoinUseCase {
+        return GetCoinUseCase(coinRepositoryImpl)
     }
 
 }

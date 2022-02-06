@@ -1,7 +1,7 @@
 package com.android.cryptocurrency.di
 
-import com.android.cryptocurrency.data.datasource.CoinRemoteDatasource
 import com.android.cryptocurrency.data.repository.CoinRepositoryImpl
+import com.android.cryptocurrency.framework.datasource.remoteDatasource.CoinRemoteDatasourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ object DomainModule {
 
     @Provides
     @Singleton
-    fun provideCoinRepository(coinRemoteDatasource: CoinRemoteDatasource): CoinRepositoryImpl {
-        return CoinRepositoryImpl(coinRemoteDatasource)
+    fun provideCoinRepository(coinRemoteDatasourceImpl: CoinRemoteDatasourceImpl): CoinRepositoryImpl {
+        return CoinRepositoryImpl(coinRemoteDatasourceImpl)
     }
 }

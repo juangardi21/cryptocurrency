@@ -26,7 +26,7 @@ fun CoinListItem(
             .fillMaxWidth()
             .wrapContentHeight()
             .clickable { onItemClick(coin) }
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            .padding(horizontal = 16.dp, vertical = 24.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
@@ -46,14 +46,12 @@ fun CoinListItem(
             style = MaterialTheme.typography.body2,
             fontStyle = FontStyle.Italic,
         )
-
-
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun Preview() {
+fun CoinListItemPreview() {
     CoinListItem(
         coin = Coin(
             id = "id",
@@ -67,7 +65,7 @@ fun Preview() {
 
 @Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES)
 @Composable
-fun Preview2() {
+fun CoinListItemPreview2() {
     CoinListItem(
         coin = Coin(
             id = "id",
