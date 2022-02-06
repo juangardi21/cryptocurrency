@@ -8,10 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.android.cryptocurrency.common.PARAM_COIN_ID
 import com.android.cryptocurrency.domain.usecase.UseCaseResult
 import com.android.cryptocurrency.domain.usecase.coin.getCoin.GetCoinUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CoinDetailViewModel(
+@HiltViewModel
+class CoinDetailViewModel @Inject constructor(
     private val getCoinUseCase: GetCoinUseCase,
     savedStateHandle: SavedStateHandle
 ): ViewModel() {
@@ -28,12 +32,11 @@ class CoinDetailViewModel(
     private fun getCoin(coinId: String) {
         _state.value = CoinDetailState(isLoading = true)
         viewModelScope.launch {
-            getCoinUseCase.execute(GetCoinUseCase.Params(coinId)).onEach { result ->
+            getCoinUseCase.execute(GetCoinUseCase.Params(coinId)).collect { result ->
                 when(result) {
                     is UseCaseResult.Failure -> {
                         _state.value = CoinDetailState(
-                            error = result.throwable.message!!
-                        )
+                            error = result.throwable.message?: "Unknown error")
                     }
                     is UseCaseResult.Success -> {
                         _state.value = CoinDetailState(
